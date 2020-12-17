@@ -2,7 +2,7 @@
 #reading the number of files in current directory
 no_of_files=`ls -1 . | wc -l`
 function guessinggame()
-(
+{
 echo "Welcome!!! Please guess the number of files in the current directory"
 #read guess the number of files
 read response
