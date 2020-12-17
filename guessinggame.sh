@@ -1,23 +1,23 @@
-#!/usr/bin/env bash
-#reading the number of files in current directory
-no_of_files=`ls -1 . | wc -l`
+#!/bin/bash
+#reading_the_number_of_files_in_current_directory
+no_of_files=`ls -1 . | egrep -c '^-'`
 function guessinggame()
 {
 echo "Welcome!!! Please guess the number of files in the current directory"
-#read guess the number of files
+#read_guess_the_number_of_files
 read response
-#main evaluation to check the guess
-while [[$response -ne $no_of_files]]
+#main_evaluation_to_check_the_guess
+while [[ $response -ne $no_of_files ]]
   do
-    if [[$response -lt $no_of_files]]
+    if [[ $response -lt $no_of_files ]]
       then echo "Oops!!! Your guess is too low, Please try Again!!!"
-    elif [[$response -gt $no_of_files]]
+    elif [[ $response -gt $no_of_files ]]
       then echo "Oops!!! Your guess is too high, Please try Again!!!"
     fi
     echo "Please guess again, make sure your guess is greater than zero"
     read response
   done
-#if the guess was correct appears the congratulations message
+#if_the_guess_was_correct_appears_the_congratulations_message
 echo "WOW!!! Your guess $response was correct, Congratulations!!!"
 }
 #call function for playing the game
